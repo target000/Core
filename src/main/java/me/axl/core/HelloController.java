@@ -12,27 +12,27 @@ import me.axl.monitor.MemInfo;
 @RestController
 public class HelloController {
 
-    @GetMapping("/say/{firstName}/{lastName}")
-    @ResponseBody
-    public String handler(@PathVariable String firstName, @PathVariable String lastName) {
-	return "Hello " + firstName + " " + lastName + "!\n";
-    }
-    
-    @GetMapping("/getmem")
-    @ResponseBody
-    public MemInfo getMem() {
-	return new MemInfo();
-    }
-    
-    @GetMapping("/getfile")
-    @ResponseBody
-    public FileInfo getFile() {
-	return new FileInfo();
-    }
-    
-    @RequestMapping("/")
-    public MemInfo index() {
-	return new MemInfo();
-    }
+	@GetMapping("/say/{firstName}/{lastName}")
+	@ResponseBody
+	public String handler(@PathVariable String firstName, @PathVariable String lastName) {
+		return "Hello " + firstName + " " + lastName + "!\n";
+	}
+
+	@GetMapping("/getmem")
+	@ResponseBody
+	public MemInfo getMem() {
+		return new MemInfo();
+	}
+
+	@GetMapping("/getfile")
+	@ResponseBody
+	public FileInfo getFile() {
+		return new FileInfo();
+	}
+
+	@RequestMapping("/")
+	public String index() {
+		return "Wow man! You got it working!";
+	}
 
 }
