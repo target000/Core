@@ -32,7 +32,7 @@ public class HelloController {
 
 	@RequestMapping("/")
 	public String index() {
-		return "Wow man! You got it working!";
+		return "test test test";
 	}
 
 }
