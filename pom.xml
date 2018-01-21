@@ -16,6 +16,10 @@
 		<url>http://192.168.1.74:8080/</url>
 	</ciManagement>
 
+	<properties>
+		<java.version>1.8</java.version>
+	</properties>
+
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
@@ -49,19 +53,32 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
+		<!-- <dependency> <groupId>ch.qos.logback</groupId> <artifactId>logback-classic</artifactId> 
+			<version>1.0.13</version> </dependency> -->
+
+		<!-- I don't like this dependency here, need to change later -->
+		<dependency>
+			<groupId>net.logstash.logback</groupId>
+			<artifactId>logstash-logback-encoder</artifactId>
+			<version>4.7</version>
+			<exclusions>
+				<exclusion>
+					<groupId>ch.qos.logback</groupId>
+					<artifactId>logback-core</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
 	</dependencies>
-
-
-	<properties>
-		<java.version>1.8</java.version>
-	</properties>
 
 	<build>
 		<plugins>
+
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+
 		</plugins>
 	</build>
 
